@@ -1,0 +1,10 @@
+[
+{"Id":1,"Nombre":"Lápiz","Precio":"5.00","Tipo":1},
+{"Id":2,"Nombre":"Pluma","Precio":"14.50","Tipo":1},
+{"Id":3,"Nombre":"Cuaderno","Precio":"26.90","Tipo":2},
+{"Id":4,"Nombre":"Libreta","Precio":"38.25","Tipo":1},
+{"Id":5,"Nombre":"Libro","Precio":"60.00","Tipo":1},
+{"Id":6,"Nombre":"Folder","Precio":"2.00","Tipo":1},
+{"Id":7,"Nombre":"Marcador","Precio":"20.00","Tipo":2},
+{"Id":8,"Nombre":"Tiempo Aire","Precio":"50.00","Tipo":3}
+]

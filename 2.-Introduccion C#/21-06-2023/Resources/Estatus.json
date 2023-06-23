@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "clave": "PTO       ",
+        "nombre": "Prospecto"
+    },
+    {
+        "id": 2,
+        "clave": "PRO       ",
+        "nombre": "En curso propedéutico"
+    },
+    {
+        "id": 3,
+        "clave": "CAP       ",
+        "nombre": "En capacitación"
+    },
+    {
+        "id": 4,
+        "clave": "INC       ",
+        "nombre": "En Incursión"
+    },
+    {
+        "id": 5,
+        "clave": "LAB       ",
+        "nombre": "Laborando"
+    },
+    {
+        "id": 6,
+        "clave": "LIB       ",
+        "nombre": "Liberado"
+    },
+    {
+        "id": 7,
+        "clave": "NI        ",
+        "nombre": "No le interesó"
+    },
+    {
+        "id": 8,
+        "clave": "BA        ",
+        "nombre": "Baja"
+    },
+    {
+        "id": 9,
+        "clave": "Sus       ",
+        "nombre": "Suspendido"
+    },
+    {
+        "id": 10,
+        "clave": "con       ",
+        "nombre": "Congelado"
+    },
+    {
+        "id": 11,
+        "clave": "Jur       ",
+        "nombre": "En Jurídico"
+    },
+    {
+        "id": 12,
+        "clave": "hh        ",
+        "nombre": "aaa"
+    },
+    {
+        "id": 13,
+        "clave": "bbb       ",
+        "nombre": "bbbbb"
+    }
+]

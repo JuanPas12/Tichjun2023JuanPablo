@@ -1,0 +1,72 @@
+[
+    {
+        "id": 3,
+        "nombre": "Marcelo Isai a",
+        "calificacion": 9,
+        "idEstado": 29,
+        "idEstatus": 5
+    },
+    {
+        "id": 4,
+        "nombre": "Oliver Alexis",
+        "calificacion": 8,
+        "idEstado": 19,
+        "idEstatus": 5
+    },
+    {
+        "id": 5,
+        "nombre": "Oscar",
+        "calificacion": 6,
+        "idEstado": 29,
+        "idEstatus": 4
+    },
+    {
+        "id": 6,
+        "nombre": "Alejandra",
+        "calificacion": 6,
+        "idEstado": 20,
+        "idEstatus": 4
+    },
+    {
+        "id": 1021,
+        "nombre": "Rodrigo",
+        "calificacion": 9,
+        "idEstado": 13,
+        "idEstatus": 3
+    },
+    {
+        "id": 1022,
+        "nombre": "Jesiel",
+        "calificacion": 9,
+        "idEstado": 13,
+        "idEstatus": 3
+    },
+    {
+        "id": 1023,
+        "nombre": "Christian Josue ",
+        "calificacion": 10,
+        "idEstado": 32,
+        "idEstatus": 3
+    },
+    {
+        "id": 1026,
+        "nombre": "Luis Enrique",
+        "calificacion": 9,
+        "idEstado": 16,
+        "idEstatus": 3
+    },
+    {
+        "id": 1027,
+        "nombre": "Rolando",
+        "calificacion": 8,
+        "idEstado": 15,
+        "idEstatus": 3
+    },
+    {
+        "id": 1029,
+        "nombre": "Jesús Yotecatl",
+        "calificacion": 8,
+        "idEstado": 15,
+        "idEstatus": 3
+    }
+]
