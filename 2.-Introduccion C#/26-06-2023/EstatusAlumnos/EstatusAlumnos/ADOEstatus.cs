@@ -32,7 +32,7 @@ namespace EstatusAlumnos
                 _comando.CommandType = CommandType.Text;
                 con.Open();
                 SqlDataReader reader = _comando.ExecuteReader();
-                while (reader.Read()) 
+                while (reader.Read())
                 {
                     _lstEstatus.Add(
                         new Estatus()
@@ -51,9 +51,23 @@ namespace EstatusAlumnos
 
 
         public Estatus Consultar(int id)
-                {
-                    throw new NotImplementedException();
-                }
+        {
+            _query = $"SELECT * FROM EstatusAlumnos WHERE id = {id}";
+            using (SqlConnection conn = new SqlConnection(_cnnString))
+            {
+                _comando= new SqlCommand(_query, conn);
+                _comando.CommandType = CommandType.Text;
+                conn.Open();
+                SqlDataReader reader = _comando.ExecuteReader();
+                reader.Read();
+                Estatus busqueda = new Estatus();
+                busqueda.id = Convert.ToInt32(reader["id"]);
+                busqueda.clave = reader["clave"].ToString();
+                busqueda.nombre = reader["nombre"].ToString();
+
+                return busqueda;
+            }
+        }
         public void Actualizar(Estatus estatus)
         {
             throw new NotImplementedException();
@@ -64,7 +78,7 @@ namespace EstatusAlumnos
             throw new NotImplementedException();
         }
 
-        
+
 
         public void Eliminar(int id)
         {

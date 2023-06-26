@@ -11,10 +11,7 @@ namespace EstatusAlumnos
         static void Main(string[] args)
         {
             ADOEstatus ad = new ADOEstatus();
-            foreach (var a in ad.Consultar())
-            {
-                Console.WriteLine(a.nombre);
-            }
+            Console.WriteLine(ad.Consultar(1).nombre);
         }
     }
 }
