@@ -12,9 +12,10 @@ namespace EstatusAlumnos
         {
             ADOEstatus ad = new ADOEstatus();
             Estatus est = new Estatus();
-            est.clave = "TFN";
-            est.nombre = "Triunfando";
-            Console.WriteLine(ad.Agregar(est));
+            est.id = 110;
+            est.clave = "FND";
+            est.nombre = "Fracasando";
+            ad.Actualizar(est);
         }
     }
 }
