@@ -11,7 +11,10 @@ namespace EstatusAlumnos
         static void Main(string[] args)
         {
             ADOEstatus ad = new ADOEstatus();
-            Console.WriteLine(ad.Consultar(1).nombre);
+            Estatus est = new Estatus();
+            est.clave = "TFN";
+            est.nombre = "Triunfando";
+            Console.WriteLine(ad.Agregar(est));
         }
     }
 }

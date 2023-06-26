@@ -49,7 +49,7 @@ namespace EstatusAlumnos
             return _lstEstatus;
         }
 
-
+        //2. Consultar Solo uno 
         public Estatus Consultar(int id)
         {
             _query = $"SELECT * FROM EstatusAlumnos WHERE id = {id}";
@@ -68,18 +68,32 @@ namespace EstatusAlumnos
                 return busqueda;
             }
         }
+        
+        //3.- Agragar
+        public int Agregar(Estatus estatus)
+        {
+            int id = 0;
+            //Agregar un registro a la tabla EstatusAlumnos
+            _query = "InsertarEstatusAlumnos";
+            using (SqlConnection con = new SqlConnection(_cnnString))
+            {
+                _comando = new SqlCommand(_query, con);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.Parameters.AddWithValue("Clave", estatus.clave);
+                _comando.Parameters.AddWithValue("Nombre", estatus.nombre);
+                con.Open();
+                id = (Int32)_comando.ExecuteScalar();
+                con.Close();
+            }
+
+            return id;
+
+        }
+
         public void Actualizar(Estatus estatus)
         {
             throw new NotImplementedException();
         }
-
-        public int Agregar(Estatus estatus)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
         public void Eliminar(int id)
         {
             throw new NotImplementedException();
