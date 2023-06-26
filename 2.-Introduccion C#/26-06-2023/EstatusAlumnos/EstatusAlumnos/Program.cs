@@ -11,11 +11,7 @@ namespace EstatusAlumnos
         static void Main(string[] args)
         {
             ADOEstatus ad = new ADOEstatus();
-            Estatus est = new Estatus();
-            est.id = 110;
-            est.clave = "FND";
-            est.nombre = "Fracasando";
-            ad.Actualizar(est);
+            ad.Eliminar(110);
         }
     }
 }

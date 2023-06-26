@@ -105,9 +105,20 @@ namespace EstatusAlumnos
                 con.Close();
             }
         }
+
+        //5.- Eliminar
         public void Eliminar(int id)
         {
-            throw new NotImplementedException();
+            _query = $"DELETE EstatusAlumnos WHERE id = {id}";
+            using (SqlConnection con = new SqlConnection(_cnnString))
+            {
+                _comando = new SqlCommand(_query, con);
+                _comando.CommandType = CommandType.Text;
+                con.Open();
+                //ExecuteNonQuery() = Ejecuta el query que se le pasa pero no retorna ningun valor
+                _comando.ExecuteNonQuery();
+                con.Close();
+            }
         }
     }
 }
