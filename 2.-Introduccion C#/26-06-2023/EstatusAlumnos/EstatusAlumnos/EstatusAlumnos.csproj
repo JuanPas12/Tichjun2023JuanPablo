@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADOEstatus.cs" />
     <Compile Include="Estatus.cs" />
     <Compile Include="ICRUDEstatus.cs" />
     <Compile Include="Program.cs" />
