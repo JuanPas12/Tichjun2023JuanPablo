@@ -20,11 +20,12 @@ namespace EstatusAlumnos
         string _cnnString = ConfigurationManager.ConnectionStrings["InstitutoConnection"].ConnectionString;
         string _query;
         SqlCommand _comando;
-        List<Estatus> _lstEstatus = new List<Estatus>();
+        List<Estatus> _lstEstatus;
 
         //1. Consultar Todos
         public List<Estatus> Consultar()
         {
+            _lstEstatus = new List<Estatus>();
             _query = "SELECT * FROM EstatusAlumnos";
             using (SqlConnection con = new SqlConnection(_cnnString))
             {
