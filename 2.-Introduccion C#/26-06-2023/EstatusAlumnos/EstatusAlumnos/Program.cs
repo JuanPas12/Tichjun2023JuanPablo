@@ -26,6 +26,7 @@ namespace EstatusAlumnos
                 op = Convert.ToInt32(Console.ReadLine());
                 switch (op)
                 {
+                    //Consultar Todos
                     case 1:
                         Console.Clear();
                         Console.WriteLine("Opción: Consultar Todos\n");
@@ -35,6 +36,7 @@ namespace EstatusAlumnos
                         }
                         Console.ReadKey();
                         break;
+                    //Consultar Solo Uno
                     case 2:
                         Console.Clear();
                         Console.WriteLine("Opción: Consultar Solo Uno\n");
@@ -43,6 +45,7 @@ namespace EstatusAlumnos
                         Console.WriteLine($"\nClave: {ado.Consultar(idC).clave} Nombre: {ado.Consultar(idC).nombre}");
                         Console.ReadKey();
                         break;
+                    //Agregar
                     case 3:
                         Console.Clear();
                         Console.WriteLine("Opción: Agregar\n");
@@ -64,6 +67,7 @@ namespace EstatusAlumnos
                         }
                         Console.ReadKey();
                         break;
+                    //Actualizar
                     case 4:
                         Console.Clear();
                         Console.WriteLine("Opción: Actualizar");
@@ -89,6 +93,7 @@ namespace EstatusAlumnos
                         }
                         Console.ReadKey();
                         break;
+                    //Eliminar
                     case 5:
                         Console.Clear();
                         Console.WriteLine("Opción: Eliminar\n");
