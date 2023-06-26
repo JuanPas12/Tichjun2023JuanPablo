@@ -114,10 +114,6 @@ namespace EstatusAlumnos
                         }
                         Console.ReadKey();
                         break;
-                    default:
-                        Console.WriteLine("Opción invalida, asegurese de haber introduciodo alguna opción del menú");
-                        Console.ReadKey();
-                        break;
                 }
                 Console.Clear();
             }
