@@ -14,8 +14,42 @@ namespace EstatusAlumnos
 {
     public class ADOEstatus : ICRUDEstatus
     {
-        List<Estatus> _lstEstatus = new List<Estatus>();
+        /*5. Implementar lo indicado en el punto 1, invocando los métodos correspondientes de 
+        la clase ADOEstatus */
+        //Cadena de conexión
+        string _cnnString = ConfigurationManager.ConnectionStrings["InstitutoConnection"].ConnectionString;
+        string _query;
+        SqlCommand _comando;
 
+        //Cargar lista Usando SqlReader
+        public List<Estatus> Consultar()
+        {
+            List<Estatus> _lstEstatus = new List<Estatus>();
+            _query = "SELECT * FROM EstatusAlumnos";
+            using (SqlConnection con = new SqlConnection(_cnnString))
+            {
+                _comando = new SqlCommand(_query, con);
+                _comando.CommandType = CommandType.Text;
+                con.Open();
+                SqlDataReader reader = _comando.ExecuteReader();
+                while (reader.Read()) 
+                {
+                    _lstEstatus.Add(
+                        new Estatus()
+                        {
+                            id = Convert.ToInt32(reader["id"]),
+                            clave = reader["clave"].ToString(),
+                            nombre = reader["nombre"].ToString(),
+                        }
+                        );
+                }
+                con.Close();
+            }
+
+            return _lstEstatus;
+        }
+
+        //1. Consultar Todos
 
     }
 }
