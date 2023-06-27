@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css">
+        <title>Alumnos</title>
+    </head>
+    <body>
+        <center>
+        <h1>Alumno</h1>
+            <div class="container">
+                <div id="divLabel">
+                    <label for="txtId">ID:</label>
+                    <label for="txtNombre">Nombre:</label>
+                    <label for="txtEdad">Edad:</label>
+                    <label for="cmbEstadoOrigen">Estado Origen:</label>
+                </div>
+                <form action="#">
+                    <input
+                        type="text"
+                        name=""
+                        id="txtId"
+                        placeholder="Ingrese ID"
+                    />
+                    <br />
+                    <input type="text" name="" id="txtNombre" disabled/>
+                    <br />
+                    <input type="text" name="" id="txtEdad" disabled/>
+                    <br />
+                    <select name="" id="cmbEstadoOrigen" class="cmbEstadoOrigen" disabled>
+                        <option value="1">Michoacan</option>
+                        <option value="2">Tabasco</option>
+                        <option value="3">CDMX</option>
+                        <option value="4">Hidalgo</option>
+                        <option value="5">Puebla</option>
+                    </select>
+                    <br />
+                    <input type="checkbox" name="" id="cbxEstatus" disabled />
+                    <label for="cbxEstatus">Estatus</label>
+                    <br>
+                    <br>
+                    <input type="button" value="Consultar" id="btnEnviar">
+                </form>
+            </div>
+        </center>
+        <script src = "js/index.js"></script>
+    </body>
+</html>
