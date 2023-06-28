@@ -24,9 +24,9 @@ namespace Presentacion.Alumnos
             lblNombreR.Text = objAlumno.nombre;
             lblPAR.Text = objAlumno.primerApellido;
             lblSAR.Text = objAlumno.segundoaPellido;
-            lblFNR.Text = objAlumno.fechaNacimiento.ToString();
+            lblFechaN.Text = objAlumno.fechaNacimiento.ToString("yyyy-MM-dd");
+            lblCURPR.Text = objAlumno.curp;
             lblCorreoR.Text = objAlumno.correo;
-            lblFNR.Text = objAlumno.curp;
             lblTelR.Text = objAlumno.telefono;
             lblSMR.Text = objAlumno.sueldo.ToString();
             /*var estadoA =

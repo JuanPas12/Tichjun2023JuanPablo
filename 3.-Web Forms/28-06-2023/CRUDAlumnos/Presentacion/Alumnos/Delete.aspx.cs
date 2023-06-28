@@ -23,9 +23,9 @@ namespace Presentacion.Alumnos
             lblNombreR.Text = objAlumno.nombre;
             lblPAR.Text = objAlumno.primerApellido;
             lblSAR.Text = objAlumno.segundoaPellido;
-            lblFNR.Text = objAlumno.fechaNacimiento.ToString();
+            lblFechaN.Text = objAlumno.fechaNacimiento.ToString("yyyy-MM-dd");
             lblCorreoR.Text = objAlumno.correo;
-            lblFNR.Text = objAlumno.curp;
+            lblCURPR.Text = objAlumno.curp;
             lblTelR.Text = objAlumno.telefono;
             lblSMR.Text = objAlumno.sueldo.ToString();
             lblEstadoR.Text = nEstado.Consultar(objAlumno.idEstadoOrigen).nombre;
@@ -38,6 +38,7 @@ namespace Presentacion.Alumnos
             int idConsulta = Convert.ToInt32(Request.QueryString["id"]);
             NAlumno nAlumno = new NAlumno();
             nAlumno.Eliminar(idConsulta);
+            Response.Redirect("Index.aspx");
         }
     }
 }

@@ -24,87 +24,6 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.Label lblNombre;
 
         /// <summary>
-        /// Control lblPA.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPA;
-
-        /// <summary>
-        /// Control lblSA.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSA;
-
-        /// <summary>
-        /// Control lblFN.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFN;
-
-        /// <summary>
-        /// Control lblCURP.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCURP;
-
-        /// <summary>
-        /// Control lblCorreo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCorreo;
-
-        /// <summary>
-        /// Control lblTel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTel;
-
-        /// <summary>
-        /// Control lblSM.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSM;
-
-        /// <summary>
-        /// Control lblEstado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstado;
-
-        /// <summary>
-        /// Control lblEstatus.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstatus;
-
-        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>
@@ -112,6 +31,15 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
+
+        /// <summary>
+        /// Control lblPA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPA;
 
         /// <summary>
         /// Control txtPA.
@@ -123,6 +51,15 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.TextBox txtPA;
 
         /// <summary>
+        /// Control lblSA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSA;
+
+        /// <summary>
         /// Control txtSA.
         /// </summary>
         /// <remarks>
@@ -130,6 +67,15 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSA;
+
+        /// <summary>
+        /// Control lblFN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFN;
 
         /// <summary>
         /// Control txtFN.
@@ -141,6 +87,15 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.TextBox txtFN;
 
         /// <summary>
+        /// Control lblCURP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCURP;
+
+        /// <summary>
         /// Control txtCURP.
         /// </summary>
         /// <remarks>
@@ -148,6 +103,15 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCURP;
+
+        /// <summary>
+        /// Control lblCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCorreo;
 
         /// <summary>
         /// Control txtCorreo.
@@ -159,6 +123,15 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
 
         /// <summary>
+        /// Control lblTel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTel;
+
+        /// <summary>
         /// Control txtTel.
         /// </summary>
         /// <remarks>
@@ -166,6 +139,15 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTel;
+
+        /// <summary>
+        /// Control lblSM.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSM;
 
         /// <summary>
         /// Control txtSueldo.
@@ -177,6 +159,15 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.TextBox txtSueldo;
 
         /// <summary>
+        /// Control lblEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstado;
+
+        /// <summary>
         /// Control ddlEstado.
         /// </summary>
         /// <remarks>
@@ -184,6 +175,15 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
+
+        /// <summary>
+        /// Control lblEstatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstatus;
 
         /// <summary>
         /// Control ddlEstatus.

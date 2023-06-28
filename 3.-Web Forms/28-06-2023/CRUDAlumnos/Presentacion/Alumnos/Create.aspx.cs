@@ -46,6 +46,7 @@ namespace Presentacion.Alumnos
                 idEstatus = Convert.ToInt32(ddlEstatus.SelectedValue),
             };
             nAlumno.Agregar(alum);
+            Response.Redirect("Index.aspx");
         }
     }
 }
