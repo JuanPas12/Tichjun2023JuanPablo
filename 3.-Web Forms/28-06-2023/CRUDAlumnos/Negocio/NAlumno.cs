@@ -12,22 +12,22 @@ namespace Negocio
     {
         DAlumno a = new DAlumno();
         
-        public List<Alumnos> Consultar()
+        public List<Alumno> Consultar()
         {
             return a.Consultar();
         }
 
-        public Alumnos Consultar(int id)
+        public Alumno Consultar(int id)
         {
             return a.Consutar(id);
         }
 
-        public void Agregar(Alumnos al)
+        public void Agregar(Alumno al)
         {
             a.Agregar(al);
         }
 
-        public void Actualizar(Alumnos al)
+        public void Actualizar(Alumno al)
         {
             a.Actualizar(al);
         }

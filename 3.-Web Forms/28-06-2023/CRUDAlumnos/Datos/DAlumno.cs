@@ -15,10 +15,10 @@ namespace Datos
         string _cnnString = ConfigurationManager.ConnectionStrings["InstitutoConnection"].ConnectionString;
         string _query;
         SqlCommand _comando;
-        List<Alumnos> _lstEstatus = new List<Alumnos>();
-        Alumnos a = new Alumnos();
+        List<Alumno> _lstEstatus = new List<Alumno>();
+        Alumno a = new Alumno();
 
-        public List<Alumnos> Consultar()
+        public List<Alumno> Consultar()
         {
             _query = "sp_consultarAlumnosTodos";
             using (SqlConnection conn = new SqlConnection(_cnnString))
@@ -29,7 +29,7 @@ namespace Datos
                 SqlDataReader reader = _comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    _lstEstatus.Add(new Alumnos()
+                    _lstEstatus.Add(new Alumno()
                     {
                         id = Convert.ToInt32(reader["id"]),
                         nombre = reader["nombre"].ToString(),
@@ -50,7 +50,7 @@ namespace Datos
             return _lstEstatus;
         }
 
-        public Alumnos Consutar(int id)
+        public Alumno Consutar(int id)
         {
             _query = "sp_consultarAlumnos";
             using (SqlConnection conn = new SqlConnection(_cnnString))
@@ -61,7 +61,7 @@ namespace Datos
                 conn.Open();
                 SqlDataReader reader = _comando.ExecuteReader();
                 reader.Read();
-                a = new Alumnos()
+                a = new Alumno()
                 {
                     id = Convert.ToInt32(reader["id"]),
                     nombre = reader["nombre"].ToString(),
@@ -80,14 +80,13 @@ namespace Datos
             return a;
         }
 
-        public void Agregar (Alumnos a)
+        public void Agregar (Alumno a)
         {
             _query = "sp_agregarAlumnos";
             using (SqlConnection conn = new SqlConnection(_cnnString))
             {
                 _comando = new SqlCommand(_query, conn);
                 _comando.CommandType = CommandType.StoredProcedure;
-                _comando.Parameters.AddWithValue("ID", a.id);
                 _comando.Parameters.AddWithValue("Nombre", a.nombre);
                 _comando.Parameters.AddWithValue("AP", a.primerApellido);
                 _comando.Parameters.AddWithValue("AM", a.segundoaPellido);
@@ -104,7 +103,7 @@ namespace Datos
             }
         }
 
-        public void Actualizar(Alumnos a)
+        public void Actualizar(Alumno a)
         {
             _query = "sp_actualizarAlumno";
             using (SqlConnection conn = new SqlConnection(_cnnString))
