@@ -54,6 +54,6 @@
         </div>
         <br />
         <br />
-        <a href ="Index.aspx">Regresar a Lista</a>
     </div>
+    <a href ="Index.aspx" class="btn text-decoration-none text-primary">Regresar a Lista</a>
 </asp:Content>

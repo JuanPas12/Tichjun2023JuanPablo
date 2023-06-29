@@ -51,6 +51,24 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
+        /// Control rfvNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+
+        /// <summary>
+        /// Control revNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombre;
+
+        /// <summary>
         /// Control lblPA.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,24 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPA;
+
+        /// <summary>
+        /// Control rfPA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfPA;
+
+        /// <summary>
+        /// Control revPA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPA;
 
         /// <summary>
         /// Control lblSA.
@@ -87,6 +123,15 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.TextBox txtSA;
 
         /// <summary>
+        /// Control revSA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revSA;
+
+        /// <summary>
         /// Control lblFN.
         /// </summary>
         /// <remarks>
@@ -103,6 +148,24 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFN;
+
+        /// <summary>
+        /// Control rfvFechaN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaN;
+
+        /// <summary>
+        /// Control rvFechaNacimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvFechaNacimiento;
 
         /// <summary>
         /// Control lblCURP.
@@ -123,6 +186,33 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.TextBox txtCURP;
 
         /// <summary>
+        /// Control rfvCURP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCURP;
+
+        /// <summary>
+        /// Control cvServerCURPvFN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvServerCURPvFN;
+
+        /// <summary>
+        /// Control cvCurpFormato.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvCurpFormato;
+
+        /// <summary>
         /// Control lblCorreo.
         /// </summary>
         /// <remarks>
@@ -139,6 +229,15 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+
+        /// <summary>
+        /// Control rfvCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCorreo;
 
         /// <summary>
         /// Control lblTel.
@@ -175,6 +274,15 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSueldo;
+
+        /// <summary>
+        /// Control rvSueldo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvSueldo;
 
         /// <summary>
         /// Control lblEstado.

@@ -31,12 +31,14 @@ namespace Presentacion.Alumnos
 
         protected void gv_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            //Es necesario filtrar por que si no se entorpece el programa.
             if(!(e.CommandName == "Page")){
                 int nRow = Convert.ToUInt16(e.CommandArgument);
                 GridViewRow row = gvAlumnos.Rows[nRow];
                 TableCell cell = row.Cells[0];
                 int idGV = Convert.ToInt32(cell.Text);
 
+                //Pasa como parametro el nombre del botón al que se le hizo click, entonces lo filtramos.
                 switch (e.CommandName)
                 {
                     case "btnDetalles":
@@ -54,12 +56,14 @@ namespace Presentacion.Alumnos
 
         private void CargarPagina()
         {
+            //LINQ Para cargar nuestra lista.
             var alm =
                     from alumno in nAlumno.Consultar()
                     join estado in nEstado.Consultar() on alumno.idEstadoOrigen equals estado.id
                     join estatus in nStatus.Consultar() on alumno.idEstatus equals estatus.id
                     select new { idA = alumno.id, nombreA = alumno.nombre, alumno.primerApellido, alumno.segundoaPellido, alumno.correo, alumno.telefono, estadoA = estado.nombre, estatusA = estatus.nombre};
-
+            
+            //Asignación de la lista al GV
             gvAlumnos.DataSource = alm.ToList();
             gvAlumnos.DataBind();
         }
@@ -67,6 +71,11 @@ namespace Presentacion.Alumnos
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Create.aspx");
+        }
+
+        protected void gvAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

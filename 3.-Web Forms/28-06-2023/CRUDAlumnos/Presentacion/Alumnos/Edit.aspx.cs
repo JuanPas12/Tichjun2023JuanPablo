@@ -48,22 +48,33 @@ namespace Presentacion.Alumnos
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Alumno alum = new Alumno()
+            if (Page.IsValid)
             {
-                id = Convert.ToInt32(txtId.Text),
-                nombre = txtNombre.Text,
-                primerApellido = txtPA.Text,
-                segundoaPellido = txtSA.Text,
-                correo = txtCorreo.Text,
-                telefono = txtTel.Text,
-                fechaNacimiento = Convert.ToDateTime(txtFN.Text),
-                curp = txtCURP.Text,
-                sueldo = Convert.ToDecimal(txtSueldo.Text),
-                idEstadoOrigen = Convert.ToInt32(ddlEstado.SelectedValue),
-                idEstatus = Convert.ToInt32(ddlEstatus.SelectedValue),
-            };
-            nAlumno.Actualizar(alum);
-            Response.Redirect("Index.aspx");
+                Alumno alum = new Alumno()
+                {
+                    id = Convert.ToInt32(txtId.Text),
+                    nombre = txtNombre.Text,
+                    primerApellido = txtPA.Text,
+                    segundoaPellido = txtSA.Text,
+                    correo = txtCorreo.Text,
+                    telefono = txtTel.Text,
+                    fechaNacimiento = Convert.ToDateTime(txtFN.Text),
+                    curp = txtCURP.Text,
+                    sueldo = Convert.ToDecimal(txtSueldo.Text),
+                    idEstadoOrigen = Convert.ToInt32(ddlEstado.SelectedValue),
+                    idEstatus = Convert.ToInt32(ddlEstatus.SelectedValue),
+                };
+                nAlumno.Actualizar(alum);
+                Response.Redirect("Index.aspx");
+            }
+        }
+
+        protected void cvServerCURPvFN_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            var fechaN = txtFN.Text;
+            var curpFN = args.Value.Substring(4, 6);
+            var fechaNCurp = fechaN.Substring(2, 2) + fechaN.Substring(5, 2) + fechaN.Substring(8, 2);
+            args.IsValid = curpFN == fechaNCurp;
         }
     }
 }

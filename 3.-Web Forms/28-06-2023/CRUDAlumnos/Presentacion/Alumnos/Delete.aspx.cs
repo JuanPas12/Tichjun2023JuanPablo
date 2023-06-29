@@ -14,10 +14,12 @@ namespace Presentacion.Alumnos
         protected void Page_Load(object sender, EventArgs e)
         {
             int idConsulta = Convert.ToInt32(Request.QueryString["id"]);
+
             NAlumno nAlumno = new NAlumno();
             NEstado nEstado = new NEstado();
             NEstatusAlumnos nStatus = new NEstatusAlumnos();
             Alumno objAlumno = new Alumno();
+
             objAlumno = nAlumno.Consultar(idConsulta);
             lblidR.Text = idConsulta.ToString();
             lblNombreR.Text = objAlumno.nombre;
