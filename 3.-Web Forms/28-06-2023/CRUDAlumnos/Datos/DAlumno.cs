@@ -16,6 +16,7 @@ namespace Datos
         string _query;
         SqlCommand _comando;
         List<Alumno> _lstEstatus = new List<Alumno>();
+        List<ItemTablaISR> _lstTablISR = new List<ItemTablaISR>();
         Alumno a = new Alumno();
 
         public List<Alumno> Consultar()
@@ -43,7 +44,7 @@ namespace Datos
                         idEstadoOrigen = Convert.ToInt32(reader["idEstadoOrigen"]),
                         idEstatus = Convert.ToInt32(reader["idEstatus"])
                     }
-                    ) ;
+                    );
                 }
                 conn.Close();
             }
@@ -80,7 +81,7 @@ namespace Datos
             return a;
         }
 
-        public void Agregar (Alumno a)
+        public void Agregar(Alumno a)
         {
             _query = "sp_agregarAlumnos";
             using (SqlConnection conn = new SqlConnection(_cnnString))
@@ -139,6 +140,32 @@ namespace Datos
                 _comando.ExecuteNonQuery();
                 conn.Close();
             }
+        }
+
+        public List<ItemTablaISR> ConsultarTablaISR()
+        {
+            _query = "sp_TablaISR";
+            using (SqlConnection con = new SqlConnection(_cnnString))
+            {
+                _comando = new SqlCommand(_query, con);
+                _comando.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                SqlDataReader reader = _comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    _lstTablISR.Add(
+                        new ItemTablaISR()
+                        {
+                            LimiteInferior = Convert.ToDecimal(reader["LimInf"]),
+                            LimiteSuperior = Convert.ToDecimal(reader["LimSup"]),
+                            CuotaFija = Convert.ToDecimal(reader["CuotaFija"]),
+                            Excedente = Convert.ToDecimal(reader["ExedLimInf"]),
+                            Subsidio = Convert.ToDecimal(reader["Subsidio"])
+                        });
+                }
+                con.Close();
+            }
+            return _lstTablISR;
         }
     }
 }

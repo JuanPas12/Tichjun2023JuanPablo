@@ -28,7 +28,7 @@ namespace IMSS
             }
             else if (puesto == 2)
             {
-                A.EnfermedadMaternidad = (SBC / 100) * 0.4m;
+                A.EnfermedadMaternidad = ((SBC - (3 * UMA)) / 100) * 0.4m;
                 A.InvalidezVida = (SBC / 100) * 0.625m;
                 A.Retiro = 0;
                 A.Cesantia = (SBC / 100) * 1.125m;

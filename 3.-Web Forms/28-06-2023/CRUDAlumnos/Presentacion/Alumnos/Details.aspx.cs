@@ -41,6 +41,22 @@ namespace Presentacion.Alumnos
                 where alumno.id == idConsulta
                 select estatus.nombre;*/
             lblEstatusR.Text = nStatus.Consultar(objAlumno.idEstatus).nombre;
+
+            decimal sueldoQunicenal = (decimal)(objAlumno.sueldo / 2);
+            ItemTablaISR objISR = nAlumno.CalcularISR(sueldoQunicenal);
+            lblLimInf.Text = objISR.LimiteInferior.ToString("C");
+            lblLimSup.Text = objISR.LimiteSuperior.ToString("C");
+            lblCuota.Text = objISR.CuotaFija.ToString("C");
+            lblExcedente.Text = objISR.Excedente.ToString("C");
+            lblSubsidio.Text = objISR.Subsidio.ToString("C");
+            lblImpuesto.Text = objISR.ISR.ToString("C");
+
+            AportacionesIMSS objImss = nAlumno.CalcularIMSS((decimal)objAlumno.sueldo);
+            lblEyM.Text = objImss.EnfermedadMaternidad.ToString("C");
+            lblIyV.Text = objImss.InvalidezVida.ToString("C");
+            lblRetiro.Text = objImss.Retiro.ToString("C");
+            lblCesantia.Text = objImss.Cesantia.ToString("C");
+            lblInfo.Text = objImss.Infonavit.ToString("C");
         }
     }
 }
