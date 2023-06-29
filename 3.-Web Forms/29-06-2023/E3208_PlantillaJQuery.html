@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h2>JQuery</h2>
+        <h3>Titulos</h3>
+        <p><span>Alumno</span> en capacitación</p>
+        <p>Desarrollo Web<span>TICH</span>.</p>
+        <div id="titinstrucciones" class="bg-success text-white">
+            Instruciones...
+        </div>
+        <div id="instrucciones" class="text-primary" style="display: none">
+            Llenar el siguiente formato con informacion veridica
+        </div>
+        <br />
+        <p>Nombre: <input type="text" id="nombre" /></p>
+        <p class="text-success error">Error en el nombre</p>
+        <p>edad: <input type="number" id="edad" /></p>
+        <p class="text-success error">Error en la edad</p>
+        <p>Fecha Nacimiento: <input type="date" id="fechaNac" /></p>
+        <p class="text-success error">Error en la fecha de nacimiento</p>
+
+        <select id="estado">
+            <option value="1">Aguascalientes</option>
+            <option value="2">Baja California</option>
+            <option value="3">Baja California Sur</option>
+        </select>
+        <br />
+        <p>Habilidades:</p>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>JQuery</li>
+        </ul>
+        <p id="generales" class="text-primary">
+            Mostar Nombre Edad y Fecha Nacimiento
+        </p>
+        <p id="habilidades" class="text-primary">Mostrar Habilidades</p>
+
+        <button id="aceptar">Aceptar</button>
+        <script>
+            $(document).ready(function () {
+                $(".error").hide();
+                $("h3").html("TI Capital Humano <strong>(TICH)</strong>");
+
+                $("#aceptar").click(function (e) {
+                    e.preventDefault();
+                    $("#generales").text(
+                        "Hola " +
+                            $("#nombre").val() +
+                            " tienes " +
+                            $("#edad").val() +
+                            " años, tu fecha de nacimiento es " +
+                            $("#fechaNac").val() +
+                            " y eres de " +
+                            $("#estado").children("option:selected").text()
+                    );
+					let habilidades = "";
+                    $("li").each(function() {
+						habilidades = habilidades + $(this).text() + "; ";
+					});
+
+					$("#habilidades").text(habilidades);
+
+					$(".error").show();
+					$(".error").click(function (e) { 
+						e.preventDefault();
+						$(this).hide();
+					});
+
+					$("p.error").removeClass("text-succes");
+					$("p.error").addClass("text-danger");
+
+					$("p").find("span").css("color", "blue");
+                });
+				$("#estado").change(function (e) { 
+						e.preventDefault();
+						let id = $(this).children("option:selected").val();
+						let nombre = $(this).children("option:selected").text();
+						alert("ID estado seleccionado: " + id + " Nombre: " + nombre); 
+					});
+
+				$("div#titinstrucciones").mouseenter(function () { 
+					$("div#instrucciones").css("display", "block");
+				});
+
+				$("div#titinstrucciones").mouseleave(function () { 
+					$("div#instrucciones").css("display", "none");
+				});
+            });
+        </script>
+    </body>
+</html>

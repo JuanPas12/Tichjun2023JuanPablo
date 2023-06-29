@@ -54,31 +54,58 @@
         </div>
         <br />
         <br />
-        <h3>Calculo del ISR</h3>
-        <div class="row"><asp:Label ID="Label1" runat="server" Text="Limite Inferior" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblLimInf" runat="server" Text=""></asp:Label></div>
-        <div class="row"><asp:Label ID="Label3" runat="server" Text="Limite Superior" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblLimSup" runat="server" Text=""></asp:Label></div>
-        <div class="row"><asp:Label ID="Label5" runat="server" Text="Cuota Fija" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblCuota" runat="server" Text=""></asp:Label></div>
-        <div class="row"><asp:Label ID="Label7" runat="server" Text="Excedente Limite Inferior" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblExcedente" runat="server" Text="" ></asp:Label></div>
-        <div class="row"><asp:Label ID="Label9" runat="server" Text="Subsidio" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblSubsidio" runat="server" Text=""></asp:Label></div>
-        <div class="row"><asp:Label ID="Label11" runat="server" Text="Impuesto" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblImpuesto" runat="server" Text=""></asp:Label></div>
+        <div class"modal fade" id="modalISR" tabindex="-1" aria-labelledby="modalISRlabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Calculo del ISR</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row"><asp:Label ID="Label1" runat="server" Text="Limite Inferior" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblLimInf" runat="server" Text=""></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label3" runat="server" Text="Limite Superior" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblLimSup" runat="server" Text=""></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label5" runat="server" Text="Cuota Fija" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblCuota" runat="server" Text=""></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label7" runat="server" Text="Excedente Limite Inferior" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblExcedente" runat="server" Text="" ></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label9" runat="server" Text="Subsidio" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblSubsidio" runat="server" Text=""></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label11" runat="server" Text="Impuesto" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblImpuesto" runat="server" Text=""></asp:Label></div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnCerrarISR" runat="server" Text="Cerrar" CssClass="btn btn-danger"/>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <h3>Calculo del IMSS</h3>
-        <div class="row"><asp:Label ID="Label13" runat="server" Text="Enfermedades y Maternidad" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblEyM" runat="server" Text=""></asp:Label></div>
-        <div class="row"><asp:Label ID="Label15" runat="server" Text="Invalidez y Vida" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblIyV" runat="server" Text=""></asp:Label></div>
-        <div class="row"><asp:Label ID="Label17" runat="server" Text="Retiro" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblRetiro" runat="server" Text=""></asp:Label></div>
-        <div class="row"><asp:Label ID="Label19" runat="server" Text="Cesantia" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblCesantia" runat="server" Text=""></asp:Label></div>
-        <div class="row"><asp:Label ID="Label21" runat="server" Text="Infonavit" CssClass="fw-bold"></asp:Label></div>
-        <div class="row"><asp:Label ID="lblInfo" runat="server" Text=""></asp:Label></div>
+        <div class"modal fade" id="modalMSS" tabindex="-1" aria-labelledby="modalIMSSlabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Calculo del IMSS</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row"><asp:Label ID="Label13" runat="server" Text="Enfermedades y Maternidad" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblEyM" runat="server" Text=""></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label15" runat="server" Text="Invalidez y Vida" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblIyV" runat="server" Text=""></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label17" runat="server" Text="Retiro" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblRetiro" runat="server" Text=""></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label19" runat="server" Text="Cesantia" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblCesantia" runat="server" Text=""></asp:Label></div>
+                        <div class="row"><asp:Label ID="Label21" runat="server" Text="Infonavit" CssClass="fw-bold"></asp:Label></div>
+                        <div class="row"><asp:Label ID="lblInfo" runat="server" Text=""></asp:Label></div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnCerrarIMSS" runat="server" Text="Cerrar" CssClass="btn btn-danger"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <a href ="Index.aspx" class="btn text-decoration-none text-primary">Regresar a Lista</a>
 </asp:Content>

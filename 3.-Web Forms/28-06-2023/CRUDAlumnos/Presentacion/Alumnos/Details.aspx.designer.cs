@@ -339,6 +339,15 @@ namespace Presentacion.Alumnos
         protected global::System.Web.UI.WebControls.Label lblImpuesto;
 
         /// <summary>
+        /// Control btnCerrarISR.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrarISR;
+
+        /// <summary>
         /// Control Label13.
         /// </summary>
         /// <remarks>
@@ -427,5 +436,14 @@ namespace Presentacion.Alumnos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblInfo;
+
+        /// <summary>
+        /// Control btnCerrarIMSS.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrarIMSS;
     }
 }
