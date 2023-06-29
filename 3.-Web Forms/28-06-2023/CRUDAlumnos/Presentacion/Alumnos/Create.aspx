@@ -79,7 +79,7 @@
             <!-- Sueldo Mensual -->
             <div class ="row">
                 <div class="col-sm-3 d-flex justify-content-end"> <strong><asp:Label ID="lblSM" runat="server" Text="Label">Sueldo Mensual</asp:Label></strong></div>
-                <div class="col-sm-3"><asp:TextBox ID="txtSueldo" runat="server" TextMode="Number" CssClass="form-control w-100" Text="0"></asp:TextBox></div>
+                <div class="col-sm-3"><asp:TextBox ID="txtSueldo" runat="server" TextMode="Number" CssClass="form-control w-100"></asp:TextBox></div>
                 <div class="col-sm">
                     <asp:RangeValidator ID="rvSueldo" runat="server" ErrorMessage="El campo Sueldo Mensual debe de estar entre 10,000 y 40,000." CssClass="text-danger fw-bold position-absolute" ControlToValidate="txtSueldo" 
                     Type="Double" MinimumValue="10000" MaximumValue="40000"></asp:RangeValidator>
@@ -102,8 +102,8 @@
             </div>
         </form>
             <br />
-            <a href ="Index.aspx" class="btn text-decoration-none text-primary">Regresar a Lista</a>
         </div>
+        <a href ="Index.aspx" class="btn text-decoration-none text-primary">Regresar a Lista</a>
         <script type="text/javascript">
             function FechaCURP(source, args) {
                 let fechaN = $("#<%=txtFN.ClientID%>").val();
