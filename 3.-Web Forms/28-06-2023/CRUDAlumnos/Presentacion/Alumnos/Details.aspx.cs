@@ -6,6 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
 using Entidades;
+using System.Diagnostics;
+using System.Reflection;
+using System.Security.Cryptography;
+using System.Web.UI.WebControls.WebParts;
 
 namespace Presentacion.Alumnos
 {
@@ -44,31 +48,32 @@ namespace Presentacion.Alumnos
                 select estatus.nombre;*/
             lblEstatusR.Text = nStatus.Consultar(objAlumno.idEstatus).nombre;
 
-           
+            ModalPopupExtenderISR.Hide();
+            ItemTablaISR objISR = nAlumno.CalcularISR(idConsulta);
 
-            
-        }
-
-        protected void btnIMSS_Click(object sender, EventArgs e)
-        {
-            AportacionesIMSS objImss = nAlumno.CalcularIMSS((decimal)objAlumno.sueldo);
-            lblEyM.Text = objImss.EnfermedadMaternidad.ToString("C");
-            lblIyV.Text = objImss.InvalidezVida.ToString("C");
-            lblRetiro.Text = objImss.Retiro.ToString("C");
-            lblCesantia.Text = objImss.Cesantia.ToString("C");
-            lblInfo.Text = objImss.Infonavit.ToString("C");
-        }
-
-        protected void btnISR_Click(object sender, EventArgs e)
-        {
-            decimal sueldoQunicenal = (decimal)(objAlumno.sueldo / 2);
-            ItemTablaISR objISR = nAlumno.CalcularISR(sueldoQunicenal);
             lblLimInf.Text = objISR.LimiteInferior.ToString("C");
             lblLimSup.Text = objISR.LimiteSuperior.ToString("C");
             lblCuota.Text = objISR.CuotaFija.ToString("C");
             lblExcedente.Text = objISR.Excedente.ToString("C");
             lblSubsidio.Text = objISR.Subsidio.ToString("C");
             lblImpuesto.Text = objISR.ISR.ToString("C");
+        }
+
+        /*protected void btnIMSS_Click(object sender, EventArgs e)
+        {
+            int idConsulta = Convert.ToInt32(Request.QueryString["id"]);
+
+            AportacionesIMSS objImss = nAlumno.CalcularIMSS(idConsulta);
+            lblEyM.Text = objImss.EnfermedadMaternidad.ToString("C");
+            lblIyV.Text = objImss.InvalidezVida.ToString("C");
+            lblRetiro.Text = objImss.Retiro.ToString("C");
+            lblCesantia.Text = objImss.Cesantia.ToString("C");
+            lblInfo.Text = objImss.Infonavit.ToString("C");
+        }*/
+
+        protected void btnISR_Click(object sender, EventArgs e)
+        {
+            ModalPopupExtenderISR.Show();
         }
     }
 }

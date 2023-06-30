@@ -19,12 +19,13 @@ namespace WSASMX
     public class WSAlumnos : System.Web.Services.WebService
     {
         NAlumno nAlumno = new NAlumno();
+        AportacionesIMSS aIm = new AportacionesIMSS();
         [WebMethod]
 
         public AportacionesIMSS CalcularIMSS(int id)
         {
             Alumno a = nAlumno.Consultar(id);
-            AportacionesIMSS aIm = nAlumno.CalcularIMSS(Convert.ToDecimal(a.sueldo));
+            aIm = nAlumno.CalcularIMSS(Convert.ToDecimal(a.sueldo));
             return aIm;
         }
 
