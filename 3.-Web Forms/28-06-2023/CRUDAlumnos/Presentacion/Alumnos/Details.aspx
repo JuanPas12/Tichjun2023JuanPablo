@@ -49,8 +49,8 @@
         </div>
         <br />
         <div class ="row">
-            <div class="col-sm"><asp:Button ID="btnIMSS" runat="server" Text="CalcularIMSS" class="btn btn-primary"/></div>
-            <div class="col-sm"><asp:Button ID="btnISR" runat="server" Text="CalcularISR" class="btn btn-light"/></div>
+            <div class="col-sm"><asp:Button ID="btnIMSS" runat="server" Text="CalcularIMSS" class="btn btn-primary" OnClick="btnIMSS_Click"/></div>
+            <div class="col-sm"><asp:Button ID="btnISR" runat="server" Text="CalcularISR" class="btn btn-light" OnClick="btnISR_Click"/></div>
         </div>
         <br />
         <br />
@@ -81,7 +81,7 @@
             </div>
         </div>
 
-        <div class"modal fade" id="modalMSS" tabindex="-1" aria-labelledby="modalIMSSlabel" aria-hidden="true">
+        <div class"modal fade" id="modalIMSS" tabindex="-1" aria-labelledby="modalIMSSlabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">

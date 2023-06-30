@@ -11,14 +11,16 @@ namespace Presentacion.Alumnos
 {
     public partial class Details : System.Web.UI.Page
     {
+        NAlumno nAlumno = new NAlumno();
+        NEstado nEstado = new NEstado();
+        NEstatusAlumnos nStatus = new NEstatusAlumnos();
+        Alumno objAlumno = new Alumno();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             int idConsulta = Convert.ToInt32(Request.QueryString["id"]);
-            NAlumno nAlumno = new NAlumno();
-            NEstado nEstado = new NEstado();
-            NEstatusAlumnos nStatus = new NEstatusAlumnos();
-            Alumno objAlumno = new Alumno();
             objAlumno = nAlumno.Consultar(idConsulta);
+
 
             lblidR.Text = idConsulta.ToString();
             lblNombreR.Text = objAlumno.nombre;
@@ -42,6 +44,23 @@ namespace Presentacion.Alumnos
                 select estatus.nombre;*/
             lblEstatusR.Text = nStatus.Consultar(objAlumno.idEstatus).nombre;
 
+           
+
+            
+        }
+
+        protected void btnIMSS_Click(object sender, EventArgs e)
+        {
+            AportacionesIMSS objImss = nAlumno.CalcularIMSS((decimal)objAlumno.sueldo);
+            lblEyM.Text = objImss.EnfermedadMaternidad.ToString("C");
+            lblIyV.Text = objImss.InvalidezVida.ToString("C");
+            lblRetiro.Text = objImss.Retiro.ToString("C");
+            lblCesantia.Text = objImss.Cesantia.ToString("C");
+            lblInfo.Text = objImss.Infonavit.ToString("C");
+        }
+
+        protected void btnISR_Click(object sender, EventArgs e)
+        {
             decimal sueldoQunicenal = (decimal)(objAlumno.sueldo / 2);
             ItemTablaISR objISR = nAlumno.CalcularISR(sueldoQunicenal);
             lblLimInf.Text = objISR.LimiteInferior.ToString("C");
@@ -50,13 +69,6 @@ namespace Presentacion.Alumnos
             lblExcedente.Text = objISR.Excedente.ToString("C");
             lblSubsidio.Text = objISR.Subsidio.ToString("C");
             lblImpuesto.Text = objISR.ISR.ToString("C");
-
-            AportacionesIMSS objImss = nAlumno.CalcularIMSS((decimal)objAlumno.sueldo);
-            lblEyM.Text = objImss.EnfermedadMaternidad.ToString("C");
-            lblIyV.Text = objImss.InvalidezVida.ToString("C");
-            lblRetiro.Text = objImss.Retiro.ToString("C");
-            lblCesantia.Text = objImss.Cesantia.ToString("C");
-            lblInfo.Text = objImss.Infonavit.ToString("C");
         }
     }
 }
