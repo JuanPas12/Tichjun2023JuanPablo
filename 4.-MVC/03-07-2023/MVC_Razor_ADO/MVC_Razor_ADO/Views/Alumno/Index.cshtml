@@ -1,0 +1,49 @@
+﻿@using System.Collections.Generic
+@using Negocio
+@using Entidades
+@model List<Alumno> 
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Instituto TICH</h2>
+<br />
+@Html.ActionLink("Agregar", "Create", null, htmlAttributes: new {@class = "btn btn-primary" })
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Correo</th>
+        <th>Telefono</th>
+        <th>Estado</th>
+        <th>Estatus</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @{ 
+        NEstado est = new NEstado();
+        NEstatusAlumnos ea = new NEstatusAlumnos();
+        foreach(var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(n => item.id)</td>
+            <td>@Html.DisplayFor(n => item.nombre)</td>
+            <td>@Html.DisplayFor(n => item.primerApellido)</td>
+            <td>@Html.DisplayFor(n => item.segundoaPellido)</td>
+            <td>@Html.DisplayFor(n => item.correo)</td>
+            <td>@Html.DisplayFor(n => item.telefono)</td>
+            <td>@est.Consultar(item.idEstadoOrigen).nombre</td>
+            <td>@ea.Consultar(item.idEstatus).nombre</td>
+            <td>@Html.ActionLink("Detalles", "Details",new {id=item.id}, htmlAttributes: new {@class = "btn btn-warning"})</td>
+            <td>@Html.ActionLink("Editar", "Edit", new { id = item.id }, htmlAttributes: new { @class = "btn btn-success" })</td>
+            <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.id }, htmlAttributes: new { @class = "btn btn-danger" })</td>
+        </tr>
+            }
+    }
+</table>

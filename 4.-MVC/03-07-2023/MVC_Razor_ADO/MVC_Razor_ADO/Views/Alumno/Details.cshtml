@@ -1,0 +1,57 @@
+﻿@using System.Collections.Generic;
+@using Negocio;
+@using Entidades;
+@model Alumno
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    NEstado est = new NEstado();
+    NEstatusAlumnos ea = new NEstatusAlumnos();
+}
+<h2>Detalles Alumno</h2>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>ID</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.id)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Nombre</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.nombre)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Primer Apellido</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.primerApellido)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Segundo Apellido</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.segundoaPellido)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Correo</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.correo)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Telefono</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.telefono)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Fecha de Nacimiento</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.fechaNacimiento)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>CURP</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.curp)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Sueldo</label></strong></div>
+    <div class="col-sm-3">@Html.DisplayFor(n => n.sueldo)</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Estado</label></strong></div>
+    <div class="col-sm-3"><label>@est.Consultar(Model.idEstadoOrigen).nombre</label></div>
+</div>
+<div class="row">
+    <div class="col-sm-3 align-content-end"><strong><label>Estatus</label></strong></div>
+    <div class="col-sm-3"><label>@est.Consultar(Model.idEstatus).nombre</label></div>
+</div>
+<br />
+@Html.ActionLink("Pagina de Inicio", "Index", null, htmlAttributes: new { @class = "btn btn-link" })

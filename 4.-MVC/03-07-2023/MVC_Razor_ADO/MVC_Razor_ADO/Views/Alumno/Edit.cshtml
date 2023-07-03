@@ -1,0 +1,63 @@
+﻿@using System.Collections.Generic;
+@using Negocio;
+@using Entidades;
+@model Alumno
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    NEstado est = new NEstado();
+    NEstatusAlumnos ea = new NEstatusAlumnos();
+}
+<h2>Actualizar Alumno</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="nombre">ID</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.EditorFor(n => n.id, new { htmlAttributes = new { @class = "form-control", @id = "nombre" , @disabled = "true"} })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="nombre">Nombre</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.EditorFor(n => n.nombre, new { htmlAttributes = new { @class = "form-control", @id = "nombre" } })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="ap">Primer Apellido</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.EditorFor(n => n.primerApellido, new { htmlAttributes = new { @class = "form-control", @id = "ap" } })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="am">Segundo Apellido</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.EditorFor(n => n.segundoaPellido, new { htmlAttributes = new { @class = "form-control", @id = "am" } })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="co">Correo</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.EditorFor(n => n.correo, new { htmlAttributes = new { @class = "form-control", @id = "co" } })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="tel">Telefono</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.EditorFor(n => n.telefono, new { htmlAttributes = new { @class = "form-control", @id = "tel" } })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="fn">Fecha de Nacimiento</label></strong></div>
+        <div class="col-sm-3 mb-2"><input type="date" class="form-control" id="fn" name="fechaNacimiento" value=@Html.DisplayFor(n => n.fechaNacimiento) /></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="curp">CURP</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.EditorFor(n => n.curp, new { htmlAttributes = new { @class = "form-control", @id = "curp" } })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="sueldo">Sueldo</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.EditorFor(n => n.sueldo, new { htmlAttributes = new { @class = "form-control", @id = "sueldo" } })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label>Estado</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.DropDownListFor(n => n.idEstadoOrigen, new SelectList(ViewBag.Estado, "id", "nombre"), htmlAttributes: new { @class = "form-control" })</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label>Estatus</label></strong></div>
+        <div class="col-sm-3 mb-2">@Html.DropDownListFor(n => n.idEstatus, new SelectList(ViewBag.Estatus, "id", "nombre"), htmlAttributes: new { @class = "form-control" })</div>
+    </div>
+    <div class="row">
+        <div class="col-2 mb-2 d-flex justify-content-center"><button type="submit" class="btn btn-primary">Guardar</button></div>
+    </div>
+}
+@Html.ActionLink("Pagina de Inicio", "Index", null, htmlAttributes: new { @class = "btn btn-link" })
