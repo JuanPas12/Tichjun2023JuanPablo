@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "HolaMundo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- 3. Crear el Método y vista HolaMundo. Incluir en la vista, el código razor ( html
+y c#) -->
+<h2>Bienvenido</h2>
+<p><strong>Hoy es </strong>@DateTime.Now</p>
+<p>
+    @{
+        var saludo = "";
+        var hora = DateTime.Now.Hour;
+        if (hora >= 5 && hora <= 12)
+        {
+            saludo = "Buenos dias";
+        }
+        else if (hora >= 1 && hora <= 19)
+        {
+            saludo = "Buenas tardes";
+        }
+        else if (hora >= 19 && hora <= 4)
+        {
+            saludo = "Buenas noches";
+        }
+    }
+    @saludo
+</p>
+
+<p>URL: @Request.Url</p>
+<p>FilePath: @Request.FilePath</p>
+<p>Path Fisico del recurso: @Request.PhysicalPath</p>
+<p>RequestType: @Request.RequestType</p>

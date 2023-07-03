@@ -4,7 +4,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
     <asp:Label ID="lblHidden" runat="server" Text=""></asp:Label>
-    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtenderISR" runat="server" TargetControlID="lblHidden" PopupControlID="modalISR" DropShadow="true"></ajaxToolkit:ModalPopupExtender>
+    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtenderISR" runat="server" TargetControlID="lblHidden" PopupControlID="modalISR" DropShadow="true">
+        <Animations>
+        <OnShown>
+            <FadeIn Duration="0.5" />
+        </OnShown>
+        <OnHiding>
+            <FadeOut Duration="0.5" />
+        </OnHiding>
+    </Animations>
+    </ajaxToolkit:ModalPopupExtender>
     <div class="container d-flex flex-column w-50 position-relative m-0">
         <h1>Datos del Alumno</h1>
         <div class ="row">
@@ -23,15 +32,15 @@
             <div class="col-sm d-flex justify-content-end"><strong><asp:Label ID="lblSA" runat="server" Text="Segundo Apellido"></asp:Label></strong></div>
             <div class="col-sm"><asp:Label ID="lblSAR" runat="server" Text=""></asp:Label></div>
         </div>
-         <div class ="row">
+        <div class ="row">
             <div class="col-sm d-flex justify-content-end"><strong><asp:Label ID="lblFN" runat="server" Text="Label">Fecha Nacimiento</asp:Label></strong></div>
             <div class="col-sm"><asp:Label ID="lblFechaN" runat="server" Text=""></asp:Label></div>
         </div>
-         <div class ="row">
+        <div class ="row">
             <div class="col-sm d-flex justify-content-end"><strong><asp:Label ID="lblCURP" runat="server" Text="Label">CURP</asp:Label></strong></div>
             <div class="col-sm"><asp:Label ID="lblCURPR" runat="server" Text=""></asp:Label></div>
         </div>
-         <div class ="row">
+        <div class ="row">
             <div class="col-sm d-flex justify-content-end"><strong><asp:Label ID="lblCorreo" runat="server" Text="Label">Correo</asp:Label></strong></div>
             <div class="col-sm"><asp:Label ID="lblCorreoR" runat="server" Text=""></asp:Label></div>
         </div>
@@ -61,11 +70,11 @@
     </div>
     <a href ="Index.aspx" class="btn text-decoration-none text-primary">Regresar a Lista</a>
     
-        <div id="modalISR" runat="server" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
+        <div id="modalISR" runat="server" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true" class="bg-white px-xxl-5 py-sm-2" style="width: 40rem; border: solid 0.05rem">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5">Calculo del ISR</h1>
+                <div class="modal-header" style="margin-bottom: 2rem">
+                <strong><h1 class="modal-title fs-5">Calculo del ISR</h1></strong>
                 <asp:Button ID="Button2" runat="server" CssClass="btn btn-close"/>
                 </div>
                 <div class="modal-body">
@@ -84,14 +93,15 @@
                     </div>
                     <div class="modal-footer">
                         <asp:Button ID="Button3" runat="server" Text="Cerrar" CssClass="btn btn-danger"/>
+                        <button id="btnCerrar" runat="server" class="btn btn-danger">Cerrar</button>
                     </div>
                 </div>
             </div>
         </div>  
-        <div class="modal" id="modalIMSS" tabindex="-1" aria-labelledby="modalIMSSlabel" aria-hidden="false" >
+        <div class="modal" id="modalIMSS" tabindex="-1" aria-labelledby="modalIMSSlabel" aria-hidden="false">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header" style="margin-bottom: 2rem">
                         <h1 class="modal-title fs-5">Calculo del IMSS</h1>
                         <asp:Button ID="btnCrerrarImms" runat="server" CssClass="btn btn-close"/>
                     </div>
@@ -109,6 +119,7 @@
                     </div>
                     <div class="modal-footer">
                         <asp:Button ID="btnCerrarIMSS" runat="server" Text="Cerrar" CssClass="btn btn-danger"/>
+                        
                     </div>
                 </div>
             </div>

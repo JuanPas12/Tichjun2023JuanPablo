@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Ciclos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Crear el Método y la Vista Ciclos. Incluir en la vista, el código razor ( html y
+    c#) -->
+<h2>Ciclos</h2>
+<ul>
+    @{
+        var suma = 0;
+        for (var i = 1; i <= 10; i++)
+        {
+            suma += i;
+            <li>Parrafo: p@(i), suma = @suma</li>
+        }
+    }
+</ul>
+<p>La suma total es: @suma</p>
+
+<!----------------------------------------------------------------------->
+<!--Crear un objeto tipo Dictionary con al menos tres términos y mostralos en la
+página mediante una dl de html, el término en el dt y el de la definición en la
+dd -->
+
+@{
+    var Diccionario = new Dictionary<string, string>()
+{
+        {"HTTP", "Es un protocolo de acceso."},
+        {"Clase", "Es una plantilla para la cración dw objetos." },
+        {"HTML", "Es un lenguaje de marcado que se utiliza..." }
+    };
+}
+
+<dl>
+    <dt>HTML</dt>
+    <dl>@Diccionario["HTTP"]</dl>
+    <dt>Clase</dt>
+    <dl>@Diccionario["Clase"]</dl>
+    <dt>HTML</dt>
+    <dd>@Diccionario["HTML"]</dd>
+</dl>
+
+<!------------------------------------------------------------------------------------>
+<!--Crear una lista ordenada de html con las variables del servidor del objeto
+Request que se encuentran en su propiedad Request.ServerVariables-->
+<ol>
+    @{
+        foreach (var i in Request.ServerVariables)
+        {
+            <li>@i</li>
+        }
+    }
+</ol>
