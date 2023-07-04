@@ -38,7 +38,7 @@
     </div>
     <div class="row">
         <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="fn">Fecha de Nacimiento</label></strong></div>
-        <div class="col-sm-3 mb-2"><input type="date" class="form-control" id="fn" name="fechaNacimiento" value=@Html.DisplayFor(n => n.fechaNacimiento) /></div>
+        <div class="col-sm-3 mb-2"><input type="date" class="form-control" id="fn" name="fechaNacimiento" value=@Model.fechaNacimiento.ToString("yyyy-MM-dd") /></div>
     </div>
     <div class="row">
         <div class="col-sm-2 mb-2 d-flex justify-content-end"><strong><label for="curp">CURP</label></strong></div>

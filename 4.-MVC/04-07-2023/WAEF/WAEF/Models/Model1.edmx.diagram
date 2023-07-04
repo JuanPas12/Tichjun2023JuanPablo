@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="446b819c81114e858bedddb75499e7f4" Name="Diagram1">
+        <EntityTypeShape EntityType="InstitutoTichModel.CatCursos" Width="1.5" PointX="2.125" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstitutoTichModel.Cursos" Width="1.5" PointX="4.875" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="InstitutoTichModel.FK__CatCursos__activ__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="InstitutoTichModel.fk_CatCurso" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

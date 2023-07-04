@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="InstitutoTichModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CatCursos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="clave" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="1000" />
+          <Property Name="horas" Type="tinyint" Nullable="false" />
+          <Property Name="idPreRequisito" Type="smallint" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cursos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCatCurso" Type="smallint" />
+          <Property Name="fechaInicio" Type="date" />
+          <Property Name="fechaTermino" Type="date" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <Association Name="FK__CatCursos__activ__2E1BDC42">
+          <End Role="CatCursos" Type="Self.CatCursos" Multiplicity="0..1" />
+          <End Role="CatCursos1" Type="Self.CatCursos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CatCursos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CatCursos1">
+              <PropertyRef Name="idPreRequisito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CatCurso">
+          <End Role="CatCursos" Type="Self.CatCursos" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Cursos" Type="Self.Cursos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CatCursos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cursos">
+              <PropertyRef Name="idCatCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InstitutoTichModelStoreContainer">
+          <EntitySet Name="CatCursos" EntityType="Self.CatCursos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cursos" EntityType="Self.Cursos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CatCursos__activ__2E1BDC42" Association="Self.FK__CatCursos__activ__2E1BDC42">
+            <End Role="CatCursos" EntitySet="CatCursos" />
+            <End Role="CatCursos1" EntitySet="CatCursos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CatCurso" Association="Self.fk_CatCurso">
+            <End Role="CatCursos" EntitySet="CatCursos" />
+            <End Role="Cursos" EntitySet="Cursos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InstitutoTichModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CatCursos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="clave" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="horas" Type="Byte" Nullable="false" />
+          <Property Name="idPreRequisito" Type="Int16" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CatCursos1" Relationship="Self.FK__CatCursos__activ__2E1BDC42" FromRole="CatCursos" ToRole="CatCursos1" />
+          <NavigationProperty Name="CatCursos2" Relationship="Self.FK__CatCursos__activ__2E1BDC42" FromRole="CatCursos1" ToRole="CatCursos" />
+          <NavigationProperty Name="Cursos" Relationship="Self.fk_CatCurso" FromRole="CatCursos" ToRole="Cursos" />
+        </EntityType>
+        <EntityType Name="Cursos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCatCurso" Type="Int16" />
+          <Property Name="fechaInicio" Type="DateTime" Precision="0" />
+          <Property Name="fechaTermino" Type="DateTime" Precision="0" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="CatCursos" Relationship="Self.fk_CatCurso" FromRole="Cursos" ToRole="CatCursos" />
+        </EntityType>
+        <Association Name="FK__CatCursos__activ__2E1BDC42">
+          <End Role="CatCursos" Type="Self.CatCursos" Multiplicity="0..1" />
+          <End Role="CatCursos1" Type="Self.CatCursos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CatCursos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CatCursos1">
+              <PropertyRef Name="idPreRequisito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CatCurso">
+          <End Role="CatCursos" Type="Self.CatCursos" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Cursos" Type="Self.Cursos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CatCursos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cursos">
+              <PropertyRef Name="idCatCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InstitutoTichEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CatCursos" EntityType="Self.CatCursos" />
+          <EntitySet Name="Cursos" EntityType="Self.Cursos" />
+          <AssociationSet Name="FK__CatCursos__activ__2E1BDC42" Association="Self.FK__CatCursos__activ__2E1BDC42">
+            <End Role="CatCursos" EntitySet="CatCursos" />
+            <End Role="CatCursos1" EntitySet="CatCursos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CatCurso" Association="Self.fk_CatCurso">
+            <End Role="CatCursos" EntitySet="CatCursos" />
+            <End Role="Cursos" EntitySet="Cursos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InstitutoTichModelStoreContainer" CdmEntityContainer="InstitutoTichEntities">
+          <EntitySetMapping Name="CatCursos">
+            <EntityTypeMapping TypeName="InstitutoTichModel.CatCursos">
+              <MappingFragment StoreEntitySet="CatCursos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="horas" ColumnName="horas" />
+                <ScalarProperty Name="idPreRequisito" ColumnName="idPreRequisito" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cursos">
+            <EntityTypeMapping TypeName="InstitutoTichModel.Cursos">
+              <MappingFragment StoreEntitySet="Cursos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCatCurso" ColumnName="idCatCurso" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="fechaTermino" ColumnName="fechaTermino" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
