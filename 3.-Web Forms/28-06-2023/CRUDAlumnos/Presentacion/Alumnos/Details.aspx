@@ -93,7 +93,6 @@
                     </div>
                     <div class="modal-footer">
                         <asp:Button ID="Button3" runat="server" Text="Cerrar" CssClass="btn btn-danger"/>
-                        <button id="btnCerrar" runat="server" class="btn btn-danger">Cerrar</button>
                     </div>
                 </div>
             </div>

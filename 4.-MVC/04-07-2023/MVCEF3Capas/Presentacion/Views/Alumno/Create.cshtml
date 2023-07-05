@@ -1,0 +1,110 @@
+﻿@model Entidades.Alumnos
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Agregar un Alumno</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong>@Html.LabelFor(model => model.nombre, htmlAttributes: new {@id ="nom"})</strong></div>
+            <div class="col-sm-3">
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", @id = "nom" } })
+                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="ap">Primer Apellido</label></strong></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.primerApellido, new { htmlAttributes = new { @class = "form-control", @id = "ap" } })
+                @Html.ValidationMessageFor(model => model.primerApellido, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="am">Segundo Apellido</label></strong></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.segundoaPellido, new { htmlAttributes = new { @class = "form-control", @id = "am" } })
+                @Html.ValidationMessageFor(model => model.segundoaPellido, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="cor">Correo</label></strong></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control", @id = "cor" } })
+                @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="tel">Telefono</label></strong></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control", @id = "tel", @maxlength = 10, type = "number", inputmode = "numeric" } })
+                @Html.ValidationMessageFor(model => model.telefono, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="fn">Fecha de Nacimiento</label></strong></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fechaNacimiento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="curp">CURP</label></strong></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.curp, new { htmlAttributes = new { @class = "form-control", @id = "curp", @maxlength = 18 } })
+                @Html.ValidationMessageFor(model => model.curp, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="sueldo">Sueldo</label></strong></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sueldo, new { htmlAttributes = new { @class = "form-control", @id = "sueldo", type = "number", inputmode = "numeric" } })
+                @Html.ValidationMessageFor(model => model.sueldo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="est">Estado</label></strong></div>
+            <div class="col-md-10">
+                @Html.DropDownList("idEstadoOrigen", new SelectList(ViewBag.Estados, "id", "nombre"), htmlAttributes: new { @class = "form-control", @id = "est" })
+                @Html.ValidationMessageFor(model => model.idEstadoOrigen, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-2 d-flex justify-content-end"><strong><label for="ea">Estatus</label></strong></div>
+            <div class="col-md-10">
+                @Html.DropDownList("idEstatus", new SelectList(ViewBag.Estatus, "id", "nombre"), htmlAttributes: new { @class = "form-control", @id = "ea" })
+                @Html.ValidationMessageFor(model => model.idEstatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="row mb-3">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-light" />
+            </div>
+        </div>
+    </div>
+}
+<br />
+<p>
+    @Html.ActionLink("Regresar a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-link text-decoration-none" })
+</p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

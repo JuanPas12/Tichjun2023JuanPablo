@@ -1,0 +1,169 @@
+﻿@model Entidades.Alumnos
+@using System.Globalization
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar Alumno</h2>
+<h3 class="text-danger">¿Esta seguro que desea eliminar al Alumno?</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    ID
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Html.DisplayFor(model => model.id)
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Nombre
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Html.DisplayFor(model => model.nombre)
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Primer Apellido
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Html.DisplayFor(model => model.primerApellido)
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Segundo Apellido
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Html.DisplayFor(model => model.segundoaPellido)
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Correo
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    <a href="mailto:@Model.correo" class="correo-enlace">@Model.correo</a>
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Telefono
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Html.DisplayFor(model => model.telefono)
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Fecha de Nacimiento
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Model.fechaNacimiento.ToString("yyyy-MM-dd")
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    CURP
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Html.DisplayFor(model => model.curp)
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Sueldo
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @{
+                        var formattedSueldo = string.Format("{0:C}", Model.sueldo);
+                    }
+                    @Html.DisplayFor(model => formattedSueldo)
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Estado
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Html.DisplayFor(model => model.Estados.nombre)
+                </dd>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-end">
+                <dt>
+                    Estatus
+                </dt>
+            </div>
+            <div class="col-sm-3">
+                <dd>
+                    @Html.DisplayFor(model => model.EstatusAlumnos.nombre)
+                </dd>
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-light" />
+
+            </div>
+        }
+</div>
+<p>
+    @Html.ActionLink("Regresar a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-link text-decoration-none" })
+</p>
+
+<style>
+    .correo-enlace {
+        color: black;
+        text-decoration: none;
+    }
+</style>
+
