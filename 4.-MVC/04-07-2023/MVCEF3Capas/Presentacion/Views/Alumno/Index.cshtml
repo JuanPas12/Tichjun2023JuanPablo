@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Instituto Tich</h2>
+<h2>Alumnos</h2>
 
 <p>
     @Html.ActionLink("Agregar", "Create", null, htmlAttributes: new { @class = "btn btn-primary fw-bold" })
@@ -68,13 +68,13 @@
                 @Html.DisplayFor(modelItem => item.EstatusAlumnos.nombre)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.id }, htmlAttributes: new { @class = "btn btn-warning text-white fw-bold" })
+                @Html.ActionLink("Detalles", "Details", new { id = item.id }, htmlAttributes: new { @class = "btn btn-warning text-white fw-bold btn-sm" })
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }, htmlAttributes: new { @class = "btn btn-success fw-bold" })
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }, htmlAttributes: new { @class = "btn btn-success fw-bold btn-sm" })
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.id }, htmlAttributes: new { @class = "btn btn-danger fw-bold" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, htmlAttributes: new { @class = "btn btn-danger fw-bold btn-sm" })
             </td>
         </tr>
     }

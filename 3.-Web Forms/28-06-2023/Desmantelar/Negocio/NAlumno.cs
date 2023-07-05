@@ -76,8 +76,8 @@ namespace Negocio
         }
 
 
-        srAlumnos.AportacionesIMSS imss = new srAlumnos.AportacionesIMSS();
-        public srAlumnos.AportacionesIMSS CalcularIMSS(int id)
+        AportacionesIMSS imss = new AportacionesIMSS();
+        public AportacionesIMSS CalcularIMSS(int id)
         {
             /*try
             {
