@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFAlumnos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFAlumnos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AportacionesIMSS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cesantia" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EnfermedadMaternidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Infonavit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InvalidezVida" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Retiro" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AportacionesIMSS" nillable="true" type="tns:AportacionesIMSS" />
+  <xs:complexType name="ItemTablaISR">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuotaFija" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Excedente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ISR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LimiteInferior" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LimiteSuperior" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Subsidio" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemTablaISR" nillable="true" type="tns:ItemTablaISR" />
+</xs:schema>

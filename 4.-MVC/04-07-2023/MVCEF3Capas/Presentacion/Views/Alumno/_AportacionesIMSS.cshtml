@@ -1,0 +1,48 @@
+﻿@model Negocio.srWCFAlumno.AportacionesIMSS
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Cesantia</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cesantia)
+        </dd>
+
+        <dt>
+            <label>Enfermedades y Maternidad</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnfermedadMaternidad)
+        </dd>
+
+        <dt>
+            <label>Infonavit</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Infonavit)
+        </dd>
+
+        <dt>
+            <label>Invalidez y Vida</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvalidezVida)
+        </dd>
+
+        <dt>
+            <label>Retiro</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Retiro)
+        </dd>
+
+    </dl>
+</div>
+
+@Scripts.Render("~/bundles/tichajax")

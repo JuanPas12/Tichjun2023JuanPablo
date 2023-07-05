@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Entidades;
 using Negocio;
+
 //Es importante hacer referencia de EntityFramework y entityFrameworkSqlServer para que todo funcione
 namespace Presentacion.Controllers
 {
@@ -114,6 +115,20 @@ namespace Presentacion.Controllers
             {
                 return View();
             }
+        }
+
+        Negocio.srWCFAlumno.WCFAlumnosClient wCFAlumnos = new Negocio.srWCFAlumno.WCFAlumnosClient();
+        public ActionResult _AportacionesIMSS(int id)
+        {
+            
+            Negocio.srWCFAlumno.AportacionesIMSS imss =  wCFAlumnos.CalcularIMSS(id);
+            return PartialView(imss);
+        }
+
+        public ActionResult _TablaISR(int id)
+        {
+            Negocio.srWCFAlumno.ItemTablaISR isr = wCFAlumnos.CalcularISR(id);
+            return PartialView(isr);
         }
     }
 }

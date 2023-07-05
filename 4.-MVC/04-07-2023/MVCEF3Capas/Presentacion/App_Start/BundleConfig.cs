@@ -25,6 +25,9 @@ namespace Presentacion
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            //Bundle que ayuda a cargar en los layout
+            bundles.Add(new ScriptBundle("~/bundles/tichajax").Include(
+                      "~/Scripts/Tich/TichAjax.js"));
         }
     }
 }

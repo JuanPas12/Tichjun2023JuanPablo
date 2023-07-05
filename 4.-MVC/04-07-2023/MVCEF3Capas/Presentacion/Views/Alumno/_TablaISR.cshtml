@@ -1,0 +1,55 @@
+﻿@model Negocio.srWCFAlumno.ItemTablaISR
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Limite Inferior</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LimiteInferior)
+        </dd>
+
+        <dt>
+            <label>Limite Superior</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LimiteSuperior)
+        </dd>
+
+        <dt>
+            <label>Cuota Fija</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CuotaFija)
+        </dd>
+
+        <dt>
+            Excedente Limite Inferior
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Excedente)
+        </dd>
+
+        <dt>
+            <label>Subsidio</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subsidio)
+        </dd>
+
+        <dt>
+            <label>Impuesto</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISR)
+        </dd>
+    </dl>
+</div>
+
+@Scripts.Render("~/bundles/tichajax")

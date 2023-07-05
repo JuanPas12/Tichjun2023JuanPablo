@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="27af4ef7-2eef-41cd-9eb9-eab74c6d7be3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58314/WCFAlumnos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WCFAlumnos.xsd" MetadataType="Schema" ID="aa818366-2d8d-424c-90a2-dd84599fdc45" SourceId="1" SourceUrl="http://localhost:58314/WCFAlumnos.svc?xsd=xsd1" />
+    <MetadataFile FileName="WCFAlumnos.disco" MetadataType="Disco" ID="e26db53c-f08b-45ad-b6ea-9eaf8fe87bea" SourceId="1" SourceUrl="http://localhost:58314/WCFAlumnos.svc?disco" />
+    <MetadataFile FileName="WCFAlumnos1.xsd" MetadataType="Schema" ID="c1b7148a-bdf8-4c65-b8c8-c6fbf4cfdd3c" SourceId="1" SourceUrl="http://localhost:58314/WCFAlumnos.svc?xsd=xsd2" />
+    <MetadataFile FileName="WCFAlumnos.wsdl" MetadataType="Wsdl" ID="567e21e0-f6d4-495f-af61-83fdb82e4d95" SourceId="1" SourceUrl="http://localhost:58314/WCFAlumnos.svc?wsdl" />
+    <MetadataFile FileName="WCFAlumnos2.xsd" MetadataType="Schema" ID="c68a660d-85e2-44b6-9b20-25125f97d4a3" SourceId="1" SourceUrl="http://localhost:58314/WCFAlumnos.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

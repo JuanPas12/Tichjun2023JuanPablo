@@ -10,154 +10,106 @@
 
 <div>
     <hr />
-    <dl class="dl-horizontal">
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    ID
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Html.DisplayFor(model => model.id)
-                </dd>
-            </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            ID
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Nombre
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Html.DisplayFor(model => model.nombre)
-                </dd>
-            </div>
+        <div class="col-sm-3">
+            @Html.DisplayFor(model => model.id)
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Primer Apellido
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Html.DisplayFor(model => model.primerApellido)
-                </dd>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Nombre
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Segundo Apellido
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Html.DisplayFor(model => model.segundoaPellido)
-                </dd>
-            </div>
+        <div class="col-sm-3">
+            @Html.DisplayFor(model => model.nombre)
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Correo
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    <a href="mailto:@Model.correo" class="correo-enlace">@Model.correo</a>
-                </dd>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Primer Apellido
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Telefono
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Html.DisplayFor(model => model.telefono)
-                </dd>
-            </div>
+        <div class="col-sm-3">
+            @Html.DisplayFor(model => model.primerApellido)
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Fecha de Nacimiento
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Model.fechaNacimiento.ToString("yyyy-MM-dd")
-                </dd>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Segundo Apellido
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    CURP
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Html.DisplayFor(model => model.curp)
-                </dd>
-            </div>
+        <div class="col-sm-3">
+            @Html.DisplayFor(model => model.segundoaPellido)
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Sueldo
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @{
-                        var formattedSueldo = string.Format("{0:C}", Model.sueldo);
-                    }
-                    @Html.DisplayFor(model => formattedSueldo)
-                </dd>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Correo
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Estado
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Html.DisplayFor(model => model.Estados.nombre)
-                </dd>
-            </div>
+        <div class="col-sm-3">
+            <a href="mailto:@Model.correo" class="correo-enlace">@Model.correo</a>
         </div>
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-end">
-                <dt>
-                    Estatus
-                </dt>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    @Html.DisplayFor(model => model.EstatusAlumnos.nombre)
-                </dd>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Telefono
         </div>
-        <br />
-        <div class="row">
-            <div class="col-sm-2 d-flex justify-content-center">
-                <button type="button" class="btn btn-primary">Calcular IMSS</button>
-            </div>
-            <div class="col-sm-3">
-                <dd>
-                    <button type="button" class="btn btn-light">Calcular ISR</button>
-                </dd>
-            </div>
+        <div class="col-sm-3">
+            @Html.DisplayFor(model => model.telefono)
         </div>
-    </dl>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Fecha de Nacimiento
+        </div>
+        <div class="col-sm-3">
+            @Model.fechaNacimiento.ToString("yyyy-MM-dd")
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            CURP
+        </div>
+        <div class="col-sm-3">
+            @Html.DisplayFor(model => model.curp)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Sueldo
+        </div>
+        <div class="col-sm-3">
+            @{
+                var formattedSueldo = string.Format("{0:C}", Model.sueldo);
+            }
+            @Html.DisplayFor(model => formattedSueldo)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Estado
+        </div>
+        <div class="col-sm-3">
+            @Html.DisplayFor(model => model.Estados.nombre)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-end">
+            Estatus
+        </div>
+        <div class="col-sm-3">
+            @Html.DisplayFor(model => model.EstatusAlumnos.nombre)
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-center">
+            <button type="button" class="btn btn-primary" onclick="IMSS()">Calcular IMSS</button>
+        </div>
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-light" onclick="ISR()">Calcular ISR</button>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Regresar a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-link text-decoration-none" })
@@ -170,3 +122,41 @@
     }
 </style>
 
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modallabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modallabel"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="contenidoModal">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function IMSS() {
+        var id = @Html.DisplayFor(model => model.id);
+        $("#modallabel").text("Calculo del IMSS");
+        var url = "@Url.Action("_AportacionesIMSS", "Alumno")" + "/" + id;
+        ajaxGethtml(url, funcExito);
+    }
+
+    function ISR() {
+        var id = @Html.DisplayFor(model => model.id);
+        $("#modallabel").text("Calculo del ISR");
+        var url = "@Url.Action("_TablaISR", "Alumno")" + "/" + id;
+        ajaxGethtml(url, funcExito);
+    }
+
+    function funcExito(data) {
+        $("#contenidoModal").html(data);
+        $("#modal").modal("show");
+    }
+</script>
+
+@Scripts.Render("~/bundles/tichajax")
