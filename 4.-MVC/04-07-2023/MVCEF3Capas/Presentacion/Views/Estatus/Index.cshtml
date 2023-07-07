@@ -1,0 +1,142 @@
+﻿@model IEnumerable<Entidades.EstatusAlumnos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null, htmlAttributes: new { @class = "btn btn-sm btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.clave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.clave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }, htmlAttributes: new { @class = "btn btn-sm btn-warning" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }, htmlAttributes: new { @class = "btn btn-sm btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id }, htmlAttributes: new { @class = "btn btn-sm btn-danger" })|
+            <button class = "btn btn-sm btn-outline-dark" onclick="Delete(@item.id)">Delete AJAX</button>
+        </td>
+    </tr>
+}
+
+</table>
+
+<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar Eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Está seguro que desea eliminar al Estatus?</p>
+                <label>Clave</label>
+                <label id="lblClave"></label>
+                <br />
+                <label>Nombre</label>
+                <label id="lblNombre"></label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <input type="submit" value="Eliminar" class="btn btn-danger" onclick="DeleteObj()"/>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var idDel;
+    function Delete(id) {
+        idDel = id;
+        var url = "http://localhost:5098/api/Estatus" + "/" + id;
+        ajaxGet(url, funcExito, funcError)
+    }
+
+    function DeleteObj() {
+        var urlD = "http://localhost:5098/api/Estatus" + "/" + idDel;
+        ajaxDelete(urlD, funcExitoD, funcError)
+    }
+
+    function ajaxGet(urlCD, funcExitoD, funcError) {
+        $.ajax({
+            url: urlCD,
+            type: "GET",
+            data: {},
+            contentType: "text/html; charset=utf-8",
+            dataType: "json",
+            success: funcExitoD,
+            error: funcError
+        });
+    }
+
+    function ajaxDelete(urlC, funcExito, funcError) {
+        $.ajax({
+            url: urlC,
+            type: "DELETE",
+            data: {},
+            contentType: "text/html; charset=utf-8",
+            dataType: "json",
+            success: funcExito,
+            error: funcError
+        });
+    }
+
+    function funcExito(data) {
+        console.log(data)
+        $("#lblClave").text(data.clave);
+        $("#lblNombre").text(data.nombre);
+        $("#modal").modal("show");
+    }
+
+    function funcExitoD() {
+        $("#modal").modal("hide");
+        window.location.reload();
+    }
+
+    function funcError(jqXHR, estatus, error) {
+        var msg = '';
+        if (jqXHR.status === 0) {
+            msg = 'No está conectado, favor de verificar su conexión.';
+        }
+        else if (jqXHR.status === 404) {
+            msg = 'Página no encontrada [404]';
+        }
+        else if (jqXHR.status === 500) {
+            msg = 'Error no hay conexión al servidor [500]';
+        }
+        else if (jqXHR.status === 'parseerror') {
+            msg = 'El parseo del JSON es erróneo.';
+        }
+        else if (jqXHR.status === 'timeout') {
+            $('body').addClass('loaded');
+        }
+        else if (jqXHR.status === 'abort') {
+            msg = 'La petición Ajax fue abortada.';
+        }
+        else {
+            msg = 'Error no conocido. ';
+            console.log(exception);
+        }
+        alert(msg);
+    }
+</script>

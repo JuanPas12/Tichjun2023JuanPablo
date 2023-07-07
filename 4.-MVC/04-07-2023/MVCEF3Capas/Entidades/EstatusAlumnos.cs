@@ -17,7 +17,6 @@ namespace Entidades
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EstatusAlumnos()
         {
-            this.Alumnos = new HashSet<Alumnos>();
         }
     
         public short id { get; set; }

@@ -61,6 +61,8 @@
       <DependentUpon>AlumnosModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="DRepositorio.cs" />
+    <Compile Include="IRepositorioBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

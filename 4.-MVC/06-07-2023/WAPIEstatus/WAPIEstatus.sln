@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAPIEstatus", "WAPIEstatus\WAPIEstatus.csproj", "{7F587125-4AB5-4737-9C49-9A1BC36CC3A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F587125-4AB5-4737-9C49-9A1BC36CC3A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F587125-4AB5-4737-9C49-9A1BC36CC3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F587125-4AB5-4737-9C49-9A1BC36CC3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F587125-4AB5-4737-9C49-9A1BC36CC3A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F9054D3-D940-4629-BF35-325AA81B5B37}
+	EndGlobalSection
+EndGlobal

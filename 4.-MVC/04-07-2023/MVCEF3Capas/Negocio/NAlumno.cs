@@ -11,6 +11,34 @@ namespace Negocio
 {
     public class NAlumno
     {
+        private DRepositorio<Alumnos> _rAlumnos = new DRepositorio<Alumnos>();
+
+        public List<Alumnos> Consultar()
+        {
+            return _rAlumnos.Consultar();
+        }
+
+        public Alumnos Consultar(int id)
+        {
+            return _rAlumnos.Consultas(id);
+        }
+
+        public void Agregar(Alumnos alm)
+        {
+            _rAlumnos.Agregar(alm);
+        }
+
+        public void Actualizar(Alumnos alm)
+        {
+            _rAlumnos.Actualizar(alm);
+        }
+
+        public void Eliminar(int id)
+        {
+            _rAlumnos.Eliminar(id);
+        }
+
+        /*
         private InstitutoTichEntities1 _DbContext = new InstitutoTichEntities1();
         private List<Alumnos> _lstAlumnos = new List<Alumnos>();
         private Alumnos _Alumno = new Alumnos();
@@ -43,6 +71,6 @@ namespace Negocio
         {
             _DbContext.Entry(_DbContext.Alumnos.Find(id)).State = EntityState.Deleted;
             _DbContext.SaveChanges();
-        }
+        }*/
     }
 }
